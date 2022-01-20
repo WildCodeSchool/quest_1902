@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - "main"
+      tags:
+         - 'v*'
+    pull_request:
+      branches:
+         - 'main'
 
 jobs:
   docker:
@@ -27,3 +32,5 @@ jobs:
           context: ./server
           push: true
           tags: loic6699/quete1902:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/quete1902:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/quete1902:buildcache,mode=max
