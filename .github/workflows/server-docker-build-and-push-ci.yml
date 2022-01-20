@@ -26,4 +26,4 @@ jobs:
         with:
           context: ./server
           push: true
-          tags: loic699/quete1902:latest
+          tags: loic6699/quete1902:latest
